@@ -23,6 +23,7 @@ export default defineComponent({
     const center = new Vector2()
     const loader = useTextures()
     const imagesLoaded = [];
+    let toggle = false;
 
     return {
       loader,
@@ -187,8 +188,15 @@ export default defineComponent({
         // this.image1.setMap(this.loader.textures[i])
         // this.image2.setMap(this.loader.textures[j])
         console.log("i", i, "j", j, "this.loader.textures", this.loader.textures)
-        this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[i])
-        this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[j])
+        if (!this.toggle) {
+          this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[i])
+          this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[j])
+        } else {
+          this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[i])
+          this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[j])
+        }
+
+        this.toggle = !this.toggle;
       }
 
       this.progress = progress1
