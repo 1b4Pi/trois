@@ -143,8 +143,10 @@ export default defineComponent({
     setTargetProgress(value) {
       this.targetProgress = value
       if (this.targetProgress < 0) {
-        this.progress += this.images.length
-        this.targetProgress += this.images.length
+        // this.progress += this.images.length
+        // this.targetProgress += this.images.length
+        this.progress += this.imagesLoaded.length
+        this.targetProgress += this.imagesLoaded.length
       }
     },
     updateImages(images) {
