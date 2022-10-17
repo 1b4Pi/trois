@@ -35,11 +35,12 @@ export default defineComponent({
   mounted() {
     this.renderer = this.$refs.renderer
     this.three = this.renderer.three
+    this.imagesLoaded.push(this.images);
 
-    if (this.images.length < 2) {
+    if (this.imagesLoaded.length < 2) {
       console.error('This slider needs at least 2 images.')
     } else {
-      this.loader.loadTextures(this.images, this.init)
+      this.loader.loadTextures(this.imagesLoaded, this.init)
     }
   },
   unmounted() {
