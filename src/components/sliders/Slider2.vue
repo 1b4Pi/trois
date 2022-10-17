@@ -35,7 +35,7 @@ export default defineComponent({
   mounted() {
     this.renderer = this.$refs.renderer
     this.three = this.renderer.three
-    this.imagesLoaded.push(this.images);
+    this.imagesLoaded.push(...this.images);
 
     if (this.imagesLoaded.length < 2) {
       console.error('This slider needs at least 2 images.')
