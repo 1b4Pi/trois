@@ -1,7 +1,7 @@
 <template>
-  <Renderer ref="renderer" antialias resize pointer>
+  <Renderer alpha ref="renderer" antialias resize pointer>
     <OrthographicCamera ref="camera" :position="{ z: 10 }" />
-    <Scene ref="scene" />
+    <Scene ref="scene" background="#b1a6c4" />
   </Renderer>
 </template>
 
