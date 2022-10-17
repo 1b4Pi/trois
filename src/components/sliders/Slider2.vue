@@ -187,8 +187,8 @@ export default defineComponent({
         // this.image1.setMap(this.loader.textures[i])
         // this.image2.setMap(this.loader.textures[j])
         console.log("i", i, "j", j, "this.loader.textures", this.loader.textures)
-        this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[i])
-        this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[j])
+        this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[i])
+        this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[j])
       }
 
       this.progress = progress1
