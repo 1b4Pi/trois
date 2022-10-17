@@ -160,8 +160,8 @@ export default defineComponent({
       // this.image2.setMap(this.loader.textures[1])
       this.imagesLoaded.push(new ZoomBlurImage(this.renderer));
       this.imagesLoaded.push(new ZoomBlurImage(this.renderer));
-      this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[0])
-      this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[1])
+      this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[this.loader.textures.length - 2])
+      this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[this.loader.textures.length - 1])
 
       this.setImagesProgress(0)
 
