@@ -180,10 +180,10 @@ export default defineComponent({
       const p0 = this.progress % 1
       const p1 = progress1 % 1
       if ((pdiff > 0 && p1 < p0) || (pdiff < 0 && p0 < p1)) {
-        // const i = Math.floor(progress1) % this.images.length
-        const i = Math.floor(progress1) % this.imagesLoaded.length
-        // const j = (i + 1) % this.images.length
-        const j = (i + 1) % this.imagesLoaded.length
+        const i = Math.floor(progress1) % this.images.length
+        // const i = Math.floor(progress1) % this.imagesLoaded.length
+        const j = (i + 1) % this.images.length
+        // const j = (i + 1) % this.imagesLoaded.length
         // this.image1.setMap(this.loader.textures[i])
         // this.image2.setMap(this.loader.textures[j])
         console.log("i", i, "j", j, "this.loader.textures", this.loader.textures)
