@@ -53,7 +53,7 @@ export default defineComponent({
     init() {
       this.initScene()
       // gsap.fromTo(this.image1.uStrength,
-      gsap.fromTo(this.imagesLoaded[imagesLoaded.length -2].uStrength,
+      gsap.fromTo(this.imagesLoaded[this.imagesLoaded.length -2].uStrength,
         {
           value: -2,
         },
@@ -80,24 +80,24 @@ export default defineComponent({
       // this.image2.setMap(this.loader.textures[1])
       this.imagesLoaded.push(new ZoomBlurImage(this.renderer));
       this.imagesLoaded.push(new ZoomBlurImage(this.renderer));
-      this.imagesLoaded[imagesLoaded.length -2].setMap(this.loader.textures[0])
-      this.imagesLoaded[imagesLoaded.length -1].setMap(this.loader.textures[1])
+      this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[0])
+      this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[1])
 
 
       this.setImagesProgress(0)
 
       // scene.add(this.image1.mesh)
       // scene.add(this.image2.mesh)
-      scene.add(this.imagesLoaded[imagesLoaded.length -2].mesh)
-      scene.add(this.imagesLoaded[imagesLoaded.length -1].mesh)
+      scene.add(this.imagesLoaded[this.imagesLoaded.length -2].mesh)
+      scene.add(this.imagesLoaded[this.imagesLoaded.length -1].mesh)
     },
     animate() {
       const { positionN } = this.renderer.three.pointer
       this.center.copy(positionN).divideScalar(2).addScalar(0.5)
       // this.image1.uCenter.value.lerp(this.center, 0.1)
       // this.image2.uCenter.value.lerp(this.center, 0.1)
-      this.imagesLoaded[imagesLoaded.length -2].uCenter.value.lerp(this.center, 0.1)
-      this.imagesLoaded[imagesLoaded.length -1].uCenter.value.lerp(this.center, 0.1)
+      this.imagesLoaded[this.imagesLoaded.length -2].uCenter.value.lerp(this.center, 0.1)
+      this.imagesLoaded[this.imagesLoaded.length -1].uCenter.value.lerp(this.center, 0.1)
 
       // lerpv2(this.image1.uCenter.value, this.center, 0.1)
       // lerpv2(this.image2.uCenter.value, this.center, 0.1)
@@ -107,8 +107,8 @@ export default defineComponent({
     onResize() {
       // this.image1.updateUV()
       // this.image2.updateUV()
-      this.imagesLoaded[imagesLoaded.length -2].updateUV()
-      this.imagesLoaded[imagesLoaded.length -1].updateUV()
+      this.imagesLoaded[this.imagesLoaded.length -2].updateUV()
+      this.imagesLoaded[this.imagesLoaded.length -1].updateUV()
     },
     onWheel(e) {
       // e.preventDefault()
@@ -160,13 +160,13 @@ export default defineComponent({
       // this.image2.setMap(this.loader.textures[1])
       this.imagesLoaded.push(new ZoomBlurImage(this.renderer));
       this.imagesLoaded.push(new ZoomBlurImage(this.renderer));
-      this.imagesLoaded[imagesLoaded.length -2].setMap(this.loader.textures[0])
-      this.imagesLoaded[imagesLoaded.length -1].setMap(this.loader.textures[1])
+      this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[0])
+      this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[1])
 
       this.setImagesProgress(0)
 
-      scene.add(this.imagesLoaded[imagesLoaded.length -2].mesh)
-      scene.add(this.imagesLoaded[imagesLoaded.length -1].mesh)
+      scene.add(this.imagesLoaded[this.imagesLoaded.length -2].mesh)
+      scene.add(this.imagesLoaded[this.imagesLoaded.length -1].mesh)
 
       this.navNext();
     },
@@ -182,8 +182,8 @@ export default defineComponent({
         const j = (i + 1) % this.images.length
         // this.image1.setMap(this.loader.textures[i])
         // this.image2.setMap(this.loader.textures[j])
-        this.imagesLoaded[imagesLoaded.length -2].setMap(this.loader.textures[i])
-        this.imagesLoaded[imagesLoaded.length -1].setMap(this.loader.textures[j])
+        this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[i])
+        this.imagesLoaded[this.imagesLoaded.length -1].setMap(this.loader.textures[j])
       }
 
       this.progress = progress1
@@ -192,8 +192,8 @@ export default defineComponent({
     setImagesProgress(progress) {
       // this.image1.uStrength.value = progress
       // this.image2.uStrength.value = -1 + progress
-      this.imagesLoaded[imagesLoaded.length -2].uStrength.value = progress
-      this.imagesLoaded[imagesLoaded.length -1].uStrength.value = -1 + progress
+      this.imagesLoaded[this.imagesLoaded.length -2].uStrength.value = progress
+      this.imagesLoaded[this.imagesLoaded.length -1].uStrength.value = -1 + progress
     },
   },
 })
