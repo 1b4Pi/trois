@@ -133,6 +133,21 @@ export default defineComponent({
     },
     updateImages(images) {
       console.log("updateImages", this.images, images);
+      this.images = images;
+      this.loader.loadTextures(this.images, this.updateScene)
+    },
+    updateScene() {
+      const scene = this.$refs.scene.scene
+      this.image1 = new ZoomBlurImage(this.renderer)
+      this.image1.setMap(this.loader.textures[0])
+      this.image2 = new ZoomBlurImage(this.renderer)
+      this.image2.setMap(this.loader.textures[1])
+      this.setImagesProgress(0)
+
+      scene.add(this.image1.mesh)
+      scene.add(this.image2.mesh)
+
+      this.navNext();
     },
     updateProgress() {
       const progress1 = lerp(this.progress, this.targetProgress, 0.1)
