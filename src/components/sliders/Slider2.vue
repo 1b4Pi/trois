@@ -131,6 +131,9 @@ export default defineComponent({
         this.targetProgress += this.images.length
       }
     },
+    updateImages(images) {
+      console.log("updateImages", this.images, images);
+    },
     updateProgress() {
       const progress1 = lerp(this.progress, this.targetProgress, 0.1)
       const pdiff = progress1 - this.progress
