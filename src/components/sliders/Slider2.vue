@@ -145,8 +145,8 @@ export default defineComponent({
       if (this.targetProgress < 0) {
         // this.progress += this.images.length
         // this.targetProgress += this.images.length
-        this.progress += this.imagesLoaded.length + 2
-        this.targetProgress += this.imagesLoaded.length + 2
+        this.progress += this.imagesLoaded.length
+        this.targetProgress += this.imagesLoaded.length
       }
     },
     updateImages(images) {
@@ -181,9 +181,9 @@ export default defineComponent({
       const p1 = progress1 % 1
       if ((pdiff > 0 && p1 < p0) || (pdiff < 0 && p0 < p1)) {
         // const i = Math.floor(progress1) % this.images.length
-        const i = Math.floor(progress1) % this.imagesLoaded.length + 2
+        const i = Math.floor(progress1) % this.imagesLoaded.length
         // const j = (i + 1) % this.images.length
-        const j = (i + 1) % this.imagesLoaded.length + 2
+        const j = (i + 1) % this.imagesLoaded.length
         // this.image1.setMap(this.loader.textures[i])
         // this.image2.setMap(this.loader.textures[j])
         this.imagesLoaded[this.imagesLoaded.length -2].setMap(this.loader.textures[i])
