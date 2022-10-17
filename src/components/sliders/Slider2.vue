@@ -133,8 +133,8 @@ export default defineComponent({
     },
     updateImages(images) {
       console.log("updateImages", this.images, images);
-      this.images = images;
-      this.loader.loadTextures(this.images, this.updateScene)
+      //this.images = images;
+      this.loader.loadTextures(images, this.updateScene)
     },
     updateScene() {
       const scene = this.$refs.scene.scene
