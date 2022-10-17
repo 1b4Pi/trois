@@ -35,12 +35,11 @@ export default defineComponent({
   mounted() {
     this.renderer = this.$refs.renderer
     this.three = this.renderer.three
-    this.imagesLoaded.push(...this.images);
 
-    if (this.imagesLoaded.length < 2) {
+    if (this.images.length < 2) {
       console.error('This slider needs at least 2 images.')
     } else {
-      this.loader.loadTextures(this.imagesLoaded, this.init)
+      this.loader.loadTextures(this.images, this.init)
     }
   },
   unmounted() {
@@ -146,8 +145,8 @@ export default defineComponent({
       if (this.targetProgress < 0) {
         // this.progress += this.images.length
         // this.targetProgress += this.images.length
-        this.progress += this.imagesLoaded.length
-        this.targetProgress += this.imagesLoaded.length
+        this.progress += this.imagesLoaded.length + 2
+        this.targetProgress += this.imagesLoaded.length + 2
       }
     },
     updateImages(images) {
